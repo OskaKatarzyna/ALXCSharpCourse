@@ -7,7 +7,7 @@ int number2 = number + 2;
 Console.WriteLine(number+2);
 Console.WriteLine(number2);
 */
-//VariablesDemo.Run();
-//VariablesDemo.RunCalculator();
-VariablesDemo.RunLogicCalculator();
+//VariablesDemo.Run(); //formularz
+//VariablesDemo.RunCalculator(); //kalkulator zwykły
+VariablesDemo.RunLogicCalculator(); //kalkulator logiczny
 

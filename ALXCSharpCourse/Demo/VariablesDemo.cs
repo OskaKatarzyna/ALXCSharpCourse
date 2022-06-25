@@ -10,7 +10,7 @@ namespace ALXCSharpCourse.Demo
     {
         public static void Run()
         {
-            Console.WriteLine("Variables demo");
+            //Console.WriteLine("Variables demo");
             int number = 10;
             bool booleanValue = true;
             bool booleanValue1 = false;
@@ -20,10 +20,10 @@ namespace ALXCSharpCourse.Demo
 
 
             //Console.WriteLine(name);
-            Console.WriteLine(1);
+            /*Console.WriteLine(1);
             Console.WriteLine(booleanValue);
             Console.WriteLine(number2);
-            Console.WriteLine(number3);
+            Console.WriteLine(number3);*/
 
             
             Console.WriteLine("Personal data");
