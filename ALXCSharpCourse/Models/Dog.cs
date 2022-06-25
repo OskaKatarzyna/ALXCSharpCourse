@@ -46,5 +46,10 @@ namespace ALXCSharpCourse.Models
         {
             Console.WriteLine($"Attention here is {Race} name {Name}");
         }
+
+        public static void Run()
+        {
+            Console.WriteLine("[Dog] Running");
+        }
     }
 }

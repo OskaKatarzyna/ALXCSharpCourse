@@ -38,6 +38,10 @@ namespace ALXCSharpCourse.Models
             borderColieDog.Present();
             borderColieDog.Bark();
             borderColieDog.Bite();
+
+            Dog.Run();
+            //funkcja statyczna wywoływana na klasie, nie obiekcie
+
         }
     }
 }
