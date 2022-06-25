@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using ALXCSharpCourse.Demo;
+using ALXCSharpCourse.Models;
 
 //Console.WriteLine("Hello, World!");
 /*int number = 6;
@@ -9,5 +9,8 @@ Console.WriteLine(number2);
 */
 //VariablesDemo.Run(); //formularz
 //VariablesDemo.RunCalculator(); //kalkulator zwykły
-VariablesDemo.RunLogicCalculator(); //kalkulator logiczny
+//VariablesDemo.RunLogicCalculator(); //kalkulator logiczny
+//FunctionsDemo.Run();
+ClassDemo.Run();
+
 
