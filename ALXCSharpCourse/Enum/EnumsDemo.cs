@@ -1,12 +1,11 @@
 ﻿using ALXCSharpCourse.Models;
-using ALXCSharpCourse.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ALXCSharpCourse.Demo
+namespace ALXCSharpCourse.Enum
 {
     public class EnumsDemo
     {
