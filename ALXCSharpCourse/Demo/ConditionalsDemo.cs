@@ -1,10 +1,11 @@
-﻿using System;
+﻿using ALXCSharpCourse.Enum;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ALXCSharpCourse.Demo
+namespace ALXCSharpCourse.Demoon
 {
     public class ConditionalsDemo
     {
@@ -59,6 +60,43 @@ namespace ALXCSharpCourse.Demo
             else
             {
                 Console.WriteLine("The given imput is ot a number");
+            }
+        }
+
+        public static void RunSwitch()
+        {
+            var sex = Sex.MALE;
+            switch(sex)
+            {
+                case Sex.MALE:
+                    Console.WriteLine("The sex is male");
+                    break;
+                case Sex.FAMALE:
+                    Console.WriteLine("The sex is female");
+                    break;
+                case Sex.CUSTOM:
+                    Console.WriteLine("The sex is custom");
+                    break;
+                default:
+                    Console.WriteLine("default");
+                    break;
+            }
+
+            var number = 0;
+            switch (number)
+            {
+                case 0:
+                    Console.WriteLine("Hallo");
+                    break;
+                case 1:
+                    Console.WriteLine("Potatoe");
+                    break;
+                case 126:
+                    Console.WriteLine("RULEZ");
+                    break;
+                default:
+                    Console.WriteLine("default");
+                    break;
             }
         }
     }

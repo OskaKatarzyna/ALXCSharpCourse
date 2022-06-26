@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using ALXCSharpCourse.Demo;
+using ALXCSharpCourse.Demoon;
 using ALXCSharpCourse.Enum;
 using ALXCSharpCourse.Homework.M1;
 using ALXCSharpCourse.Models;
@@ -21,6 +22,13 @@ Console.WriteLine(number2);
 //PenBoxDemo.Run();
 //ComputerDemo.Run();
 //ConditionalsDemo.Run();
-ConditionalsDemo.RunNumberApp();
-
+//ConditionalsDemo.RunNumberApp();
+//ArraysAndLists.RunList();
+//LoopsDemo.Run();
+//ConditionalsDemo.RunSwitch();
+GlobalVariablesDemo.Run();
+Console.WriteLine("Bye");
+var demoClass = new GlobalVariablesDemo();
+demoClass.PropertyValue = 21;
+demoClass.MultiplyValue(23);
 

@@ -28,7 +28,7 @@ namespace ALXCSharpCourse.Models
         public Dog(string name, string race)
         {
             Console.WriteLine("A new dog with arguments");
-            Name = race;
+            Name = name;
             Race = race;
         }
 
