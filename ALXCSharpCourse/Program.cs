@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using ALXCSharpCourse.Demo;
 using ALXCSharpCourse.Enum;
 using ALXCSharpCourse.Homework.M1;
 using ALXCSharpCourse.Models;
@@ -17,6 +18,9 @@ Console.WriteLine(number2);
 //EnumsDemo.Run();
 //CrayonDemo.Run();
 //PencilDemo.Run();
-PenBoxDemo.Run();
+//PenBoxDemo.Run();
+//ComputerDemo.Run();
+//ConditionalsDemo.Run();
+ConditionalsDemo.RunNumberApp();
 
 
