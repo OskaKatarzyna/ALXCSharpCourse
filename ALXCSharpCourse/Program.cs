@@ -4,6 +4,8 @@ using ALXCSharpCourse.Demoon;
 using ALXCSharpCourse.Enum;
 using ALXCSharpCourse.Homework.M1;
 using ALXCSharpCourse.Models;
+using ALXCSharpCourse.Homework;
+using ALXCSharpCourse.Homework.Calculator;
 
 //Console.WriteLine("Hello, World!");
 /*int number = 6;
@@ -26,9 +28,10 @@ Console.WriteLine(number2);
 //ArraysAndLists.RunList();
 //LoopsDemo.Run();
 //ConditionalsDemo.RunSwitch();
-GlobalVariablesDemo.Run();
-Console.WriteLine("Bye");
-var demoClass = new GlobalVariablesDemo();
-demoClass.PropertyValue = 21;
-demoClass.MultiplyValue(23);
+//GlobalVariablesDemo.Run();
+//Console.WriteLine("Bye");
+//var demoClass = new GlobalVariablesDemo();
+//demoClass.PropertyValue = 21;
+//demoClass.MultiplyValue(23);
+CalculatorDemo.Run();
 

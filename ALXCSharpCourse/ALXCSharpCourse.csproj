@@ -7,12 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Demo\ArraysAndLists.Democs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="Demo\ArraysAndLists.Democs" />
-  </ItemGroup>
-
 </Project>
