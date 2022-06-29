@@ -8,53 +8,32 @@ namespace ALXCSharpCourse.Homework.Calculator
 {
     public class Calculator
     {
-        public double X { get; set; }
-        public double Y { get; set; }  
-        public double Result{ get; set; }
-        public Sign Sign { get; set; }
-
-        public Calculator(double x, double y, double result, Sign sign)
-        {
-            X = x;
-            Y = y;
-            Result = result;
-            Sign = sign;
-        }
+        public bool number1Bool;
+        public bool signBool;
+        public bool number2Bool;
+        public bool equalBool;
+        public Operation operation;
 
         public Calculator()
         {
-            /*Console.WriteLine("It's yor calculator. What do You want to calc?");
-            Console.WriteLine("Press q to escape.");
-            bool succeded = Double.TryParse(Console.ReadLine(), out X);
-            if (succeded)
-            {
-                succeded = Double.TryParse(Console.ReadLine(), out X);
-                //Console.ReadKey
-            }
-            else 
-            {
-                Console.WriteLine("You entered an incorrect operation");
-            }*/
-        }
+            number1Bool = true;
+            signBool = false;
+            number2Bool = false;
+            equalBool = false;
+            operation = new Operation();
+    }
         
 
         public void Run()
         {
-            //ConsoleKeyInfo number1List = new List<ConsoleKeyInfo>();
-            //ConsoleKeyInfo number2;
             ConsoleKeyInfo equal;
             ConsoleKeyInfo cki;
-            int number1 = 0;
-            int number2 = 0;
-            bool number1Bool = true;
-            bool signBool = false;
-            bool number2Bool = false;
-            bool equalBool = false;
             Console.WriteLine("\nIt's yor calculator. What do You want to calc?");
             Console.WriteLine("Enter {x} {operation} {y} = or press q to escape.");
+            Console.WriteLine($"\nnumber1 = {operation.X} number2 = {operation.Y}");
             do
             {
-
+                //Console.Write("petla");
                 cki = Console.ReadKey();
                 if (cki.Key == ConsoleKey.Q) 
                     break;
@@ -62,78 +41,108 @@ namespace ALXCSharpCourse.Homework.Calculator
                 {
                     int x;
                     if (Int32.TryParse(cki.KeyChar.ToString(), out x))
-                        number1 = number1 * 10 + x;
+                    {
+                        operation.X = operation.X * 10 + x;
+                    }
                     else
                     {
-                        number1Bool=false;
-                        signBool=true;
+                        number1Bool = false;
+                        signBool = true;
                     }                      
                 }  
                 if (signBool)
                 {
-                    Console.Write("sign");
+                    number2Bool = true;
+                    signBool = false;
                     if (cki.KeyChar.ToString() == "+")
                     {
-                        number2Bool = true;
-                        signBool = false;
-                        break;
-                        //Console.Write("+");
-
+                        operation.Sign = Sign.PLUS;
+                        continue;
+                    } else if (cki.KeyChar.ToString() == "-")
+                    {
+                        operation.Sign = Sign.MINUS;
+                        continue;
+                    } else if (cki.KeyChar.ToString() == "*")
+                    {
+                        operation.Sign = Sign.MULT;
+                        continue;
                     }
+                    else if (cki.KeyChar.ToString() == "/")
+                    {
+                        operation.Sign = Sign.DIV;
+                        continue;
+                    }
+                    if (cki.KeyChar.ToString() == "%")
+                    {
+                        operation.Sign = Sign.MOD;
+                        continue;
+                    }
+
                     else
                     {
-                        signBool = false;
+                        number2Bool = false;
                     }
                 } 
                 if (number2Bool)
                 {
-                    //Console.Write("n");
-                    int x;
-                    if (Int32.TryParse(cki.KeyChar.ToString(), out x))
+                    int y;
+                    if (Int32.TryParse(cki.KeyChar.ToString(), out y))
                     {
-                        number2 = number2 * 10 + x;
-                        //Console.Write("s2");
+                        operation.Y = operation.Y * 10 + y;
                     }
                     else
                     {
                         number2Bool = false;
+                        equalBool = true;
                     }
                 }
                 if (equalBool)
                 {
                     if (cki.KeyChar.ToString() == "=")
-                        Console.Write($" {number1 + number2}");
+                    {
+                        switch (operation.Sign)
+                        {
+                            case Sign.PLUS:
+                                operation.Result = operation.X + operation.Y;
+                                break;
+                            case Sign.MINUS:
+                                operation.Result = operation.X - operation.Y;
+                                break;
+                            case Sign.MULT:
+                                operation.Result = operation.X * operation.Y;
+                                break;
+                            case Sign.DIV:
+                                operation.Result = operation.X / operation.Y;
+                                break;
+                            case Sign.MOD:
+                                operation.Result = operation.X % operation.Y;
+                                break;
+                        }
+                        Console.Write($"{operation.Result}\n");
+                        //Console.WriteLine($"\nnumber1 = {operation.X} number2 = {operation.Y}");
+                        number1Bool = true;
+                        signBool = false;
+                        number2Bool = false;
+                        equalBool = false;
+                        operation.X = 0;
+                        operation.Y = 0;
+                        operation.Result = 0;
+                    }
                     else
                         equalBool = false;
                 }
                 if(!(number2Bool || number1Bool || signBool || equalBool))
                 {
                     Console.WriteLine("\nIncorrect operation format . Enter {x} {operation} {y} =");
-                    Console.WriteLine($"\nnumber1 = {number1} number2 = {number2}");
-                    Console.WriteLine($"number2Bool = {number2Bool} number1Bool = {number1Bool} signBool = {signBool} equalBool = {equalBool}");
                     number1Bool = true;
                     signBool = false;
                     number2Bool = false;
                     equalBool = false;
-                    number1 = 0;
-                    number2 = 0;
+                    operation.X = 0;
+                    operation.Y = 0;
+                    operation.Result = 0;
                 }
-
-
-                /*number2 = Console.ReadKey();
-                if (number1.Key == ConsoleKey.Q)
-                    break;
-                equal = Console.ReadKey();
-                if (equal.Key == ConsoleKey.Q)
-                    break;
-                else if(equal.Key != ConsoleKey.OemPlus)
-                    Console.WriteLine("Incorrect operation format. Enter {x} {operatio} {y} =");*/
-
             } while(true);
-            Console.WriteLine($"\nnumber1 = {number1} number2 = {number2}");
-
-
-
         }
     }
 }
