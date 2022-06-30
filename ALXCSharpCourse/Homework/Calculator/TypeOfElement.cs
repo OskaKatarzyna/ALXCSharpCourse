@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace ALXCSharpCourse.Homework.Calculator
 {
-    public class CalculatorDemo
+    public enum TypeOfElement
     {
-        public static void Run()
-        {
-            var calculator = new CalculatorMultiArgument();
-            calculator.Run();
-
-        }
+        NUMBER, SIGN, EQUAL, NULL,
     }
 }
