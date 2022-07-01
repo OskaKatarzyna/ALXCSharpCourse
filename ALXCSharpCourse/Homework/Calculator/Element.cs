@@ -20,6 +20,13 @@ namespace ALXCSharpCourse.Homework.Calculator
 
         }
 
+        public Element(TypeOfElement typeOfElement, double value, Sign sign)
+        {
+            TypeOfElement = typeOfElement;
+            Value = value;
+            Sign = sign;
+        }
+
         public void Clear()
         {
             TypeOfElement = TypeOfElement.NULL;
@@ -39,6 +46,7 @@ namespace ALXCSharpCourse.Homework.Calculator
             Sign = element.Sign;
         }
 
+
         public bool MultiplicationOrDivision(Element i)
         {
             return 
@@ -46,6 +54,8 @@ namespace ALXCSharpCourse.Homework.Calculator
                     (i.TypeOfElement == TypeOfElement.SIGN && i.Sign == Sign.MULT)
                     ||
                     (i.TypeOfElement == TypeOfElement.SIGN && i.Sign == Sign.DIV)
+                    ||
+                    (i.TypeOfElement == TypeOfElement.SIGN && i.Sign == Sign.MOD)
                 );
         }
     }
