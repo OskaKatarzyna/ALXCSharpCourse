@@ -10,7 +10,7 @@ namespace ALXCSharpCourse.Homework.Calculator
     {
         public static void Run()
         {
-            var calculator = new CalculatorMultiArgument();
+            var calculator = new CalculatorMultiArgumentInt();
             calculator.Run();
 
         }

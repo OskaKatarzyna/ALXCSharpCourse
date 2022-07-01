@@ -63,8 +63,7 @@ namespace ALXCSharpCourse.Homework.Calculator
         {
             Element find = new Element();
             int index;
-            bool succed = true; ;
-            double value;
+            bool succed = true;
             do
             {
                 index = Elements.FindIndex(0, Elements.Count - 1, find.MultiplicationOrDivision);
@@ -76,8 +75,6 @@ namespace ALXCSharpCourse.Homework.Calculator
         }
         public bool CountAllFromLeft()
         {
-            Element find = new Element();
-            int index;
             bool succed = true;
             double value;
             while(Elements.Count > 1)
@@ -154,7 +151,17 @@ namespace ALXCSharpCourse.Homework.Calculator
         public void ReadNumber(ConsoleKeyInfo cki)
         {
             int x;
-            if (Int32.TryParse(cki.KeyChar.ToString(), out x))
+            //minus before the first number
+            if (Elements.Count == 0 && CurrentElement.TypeOfElement == TypeOfElement.NULL && cki.KeyChar.ToString() == "-")
+            {
+                CurrentElement.TypeOfElement = TypeOfElement.NUMBER;
+                CurrentElement.Value = -1;
+                AddCopyOfCurrentElementToElements();
+                CurrentElement.TypeOfElement = TypeOfElement.SIGN;
+                CurrentElement.Sign = Sign.MULT;
+                AddCopyOfCurrentElementToElements();
+            }
+            else if (Int32.TryParse(cki.KeyChar.ToString(), out x))
             {
                 CurrentElement.TypeOfElement = TypeOfElement.NUMBER;
                 CurrentElement.Value = CurrentElement.Value * 10 + x;
