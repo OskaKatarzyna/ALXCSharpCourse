@@ -39,6 +39,14 @@ namespace ALXCSharpCourse.Homework.Calculator
             Console.WriteLine($"\n({TypeOfElement}, {Value}, {Sign})");
         }
 
+        public void PrintSimply()
+        {
+            if (TypeOfElement == TypeOfElement.NUMBER)
+                Console.Write($"{TypeOfElement}");
+            else if(TypeOfElement == TypeOfElement.SIGN)
+                Console.Write($"{Sign}");
+        }
+
         public void Copy(Element element)
         {
             TypeOfElement = element.TypeOfElement;
